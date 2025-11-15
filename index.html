@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>اختبار التخصص الجامعي - السعودية</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <style>
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -12,7 +11,6 @@
             margin: 0;
             padding: 0;
         }
-
         .container {
             max-width: 900px;
             margin: 20px auto;
@@ -21,29 +19,24 @@
             border-radius: 14px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
-
         h1, h2 {
             text-align: center;
             margin: 0 0 10px;
         }
-
         h1 {
             font-size: 1.5rem;
             color: #006c7f;
         }
-
         h2 {
             font-size: 1rem;
             color: #444;
         }
-
         .intro {
             text-align: center;
             font-size: 0.9rem;
             color: #555;
             margin-bottom: 15px;
         }
-
         .note {
             background: #e6f7fa;
             border-right: 4px solid #00a2c2;
@@ -53,25 +46,21 @@
             margin-bottom: 18px;
             color: #04505e;
         }
-
         .info-fields {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 10px;
         }
-
         .info-fields .field {
             flex: 1 1 150px;
         }
-
         label {
             font-size: 0.9rem;
             font-weight: 600;
             display: block;
             margin-bottom: 4px;
         }
-
         input[type="text"],
         select {
             width: 100%;
@@ -81,7 +70,6 @@
             font-size: 0.9rem;
             box-sizing: border-box;
         }
-
         .question {
             margin: 15px 0;
             padding: 12px 10px;
@@ -89,33 +77,27 @@
             background: #f8fafc;
             border: 1px solid #e1e7f0;
         }
-
         .question-title {
             font-weight: 700;
             margin-bottom: 6px;
             color: #222;
             font-size: 0.92rem;
         }
-
         .options {
             margin-right: 5px;
         }
-
         .options label {
             font-weight: 400;
             margin-bottom: 3px;
             cursor: pointer;
         }
-
         .options input[type="radio"] {
             margin-left: 4px;
         }
-
         .btn-center {
             text-align: center;
             margin-top: 18px;
         }
-
         button {
             background: linear-gradient(135deg, #00b3c8, #007f91);
             color: #fff;
@@ -126,11 +108,9 @@
             font-weight: 600;
             cursor: pointer;
         }
-
         button:active {
             transform: scale(0.98);
         }
-
         #resultBox {
             margin-top: 18px;
             padding: 14px 12px;
@@ -139,25 +119,21 @@
             border: 1px solid #b9f3d2;
             display: none;
         }
-
         #resultBox h3 {
             margin: 0 0 6px;
             color: #0b7a47;
             font-size: 1.05rem;
         }
-
         #resultBox p {
             margin: 4px 0;
             font-size: 0.9rem;
             color: #333;
         }
-
         .small {
             font-size: 0.78rem;
             color: #666;
             margin-top: 6px;
         }
-
         @media (max-width: 600px) {
             .container {
                 margin: 10px;
@@ -184,135 +160,133 @@
         واستشارة المرشد/ة الأكاديمي/ة، مع الاستفادة من دليل <strong>المستقبل الجامعي</strong>.
     </div>
 
-    <form id="quizForm">
-        <!-- معلومات الطالب -->
-        <div class="info-fields">
-            <div class="field">
-                <label for="studentName">الاسم (اختياري)</label>
-                <input type="text" id="studentName" placeholder="اكتب اسمك الأول">
-            </div>
-            <div class="field">
-                <label for="grade">الصف / المرحلة</label>
-                <select id="grade">
-                    <option value="">اختر من القائمة</option>
-                    <option>ثالث ثانوي - علمي</option>
-                    <option>ثالث ثانوي - أدبي</option>
-                    <option>ثاني ثانوي</option>
-                    <option>أول ثانوي</option>
-                    <option>خريج/ـة ثانوي</option>
-                    <option>أخرى</option>
-                </select>
-            </div>
+    <!-- معلومات الطالب -->
+    <div class="info-fields">
+        <div class="field">
+            <label for="studentName">الاسم (اختياري)</label>
+            <input type="text" id="studentName" placeholder="اكتب اسمك الأول">
         </div>
+        <div class="field">
+            <label for="grade">الصف / المرحلة</label>
+            <select id="grade">
+                <option value="">اختر من القائمة</option>
+                <option>ثالث ثانوي - علمي</option>
+                <option>ثالث ثانوي - أدبي</option>
+                <option>ثاني ثانوي</option>
+                <option>أول ثانوي</option>
+                <option>خريج/ـة ثانوي</option>
+                <option>أخرى</option>
+            </select>
+        </div>
+    </div>
 
-        <!-- الأسئلة -->
-        <div class="question">
-            <div class="question-title">1. المادة الأقرب لقلبك عادةً هي:</div>
-            <div class="options">
-                <label><input type="radio" name="q1" value="health"> الأحياء / العلوم الطبيعية</label><br>
-                <label><input type="radio" name="q1" value="engineering"> الرياضيات / الفيزياء</label><br>
-                <label><input type="radio" name="q1" value="computing"> الحاسب وتقنية المعلومات</label><br>
-                <label><input type="radio" name="q1" value="business"> ريادة الأعمال / الإدارة / الاقتصاد</label><br>
-                <label><input type="radio" name="q1" value="sharia"> الدراسات الإسلامية / الفقه</label><br>
-                <label><input type="radio" name="q1" value="humanities"> اللغة العربية / التاريخ / الجغرافيا</label><br>
-                <label><input type="radio" name="q1" value="design"> الفنون / التصميم / الجرافيك</label>
-            </div>
+    <!-- الأسئلة -->
+    <div class="question">
+        <div class="question-title">1. المادة الأقرب لقلبك عادةً هي:</div>
+        <div class="options">
+            <label><input type="radio" name="q1" value="health"> الأحياء / العلوم الطبيعية</label><br>
+            <label><input type="radio" name="q1" value="engineering"> الرياضيات / الفيزياء</label><br>
+            <label><input type="radio" name="q1" value="computing"> الحاسب وتقنية المعلومات</label><br>
+            <label><input type="radio" name="q1" value="business"> ريادة الأعمال / الإدارة / الاقتصاد</label><br>
+            <label><input type="radio" name="q1" value="sharia"> الدراسات الإسلامية / الفقه</label><br>
+            <label><input type="radio" name="q1" value="humanities"> اللغة العربية / التاريخ / الجغرافيا</label><br>
+            <label><input type="radio" name="q1" value="design"> الفنون / التصميم / الجرافيك</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">2. أي نوع من المهام تستمتعين/تستمتع به أكثر؟</div>
-            <div class="options">
-                <label><input type="radio" name="q2" value="health"> مساعدة الآخرين صحياً أو نفسياً</label><br>
-                <label><input type="radio" name="q2" value="engineering"> حل مسائل منطقية معقّدة</label><br>
-                <label><input type="radio" name="q2" value="computing"> برمجة، تصميم تطبيقات أو مواقع</label><br>
-                <label><input type="radio" name="q2" value="business"> قيادة فريق، تخطيط مشروعات، بيع وشراء</label><br>
-                <label><input type="radio" name="q2" value="sharia"> البحث في الأحكام الشرعية وخدمة المجتمع</label><br>
-                <label><input type="radio" name="q2" value="humanities"> الكتابة، التلخيص، الإلقاء والتواصل</label><br>
-                <label><input type="radio" name="q2" value="design"> الرسم، التصوير، تصميم الهويات البصرية</label>
-            </div>
+    <div class="question">
+        <div class="question-title">2. أي نوع من المهام تستمتعين/تستمتع به أكثر؟</div>
+        <div class="options">
+            <label><input type="radio" name="q2" value="health"> مساعدة الآخرين صحياً أو نفسياً</label><br>
+            <label><input type="radio" name="q2" value="engineering"> حل مسائل منطقية معقّدة</label><br>
+            <label><input type="radio" name="q2" value="computing"> برمجة، تصميم تطبيقات أو مواقع</label><br>
+            <label><input type="radio" name="q2" value="business"> قيادة فريق، تخطيط مشروعات، بيع وشراء</label><br>
+            <label><input type="radio" name="q2" value="sharia"> البحث في الأحكام الشرعية وخدمة المجتمع</label><br>
+            <label><input type="radio" name="q2" value="humanities"> الكتابة، التلخيص، الإلقاء والتواصل</label><br>
+            <label><input type="radio" name="q2" value="design"> الرسم، التصوير، تصميم الهويات البصرية</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">3. لو خُيِّرت في بيئة عمل مستقبلية، ماذا تختار غالبًا؟</div>
-            <div class="options">
-                <label><input type="radio" name="q3" value="health"> مستشفى، مركز صحي، عيادة</label><br>
-                <label><input type="radio" name="q3" value="engineering"> شركات هندسية، مشاريع بنية تحتية</label><br>
-                <label><input type="radio" name="q3" value="computing"> شركات تقنية، مراكز بيانات، منصات رقمية</label><br>
-                <label><input type="radio" name="q3" value="business"> شركات كبرى، بنوك، مشاريع ريادية</label><br>
-                <label><input type="radio" name="q3" value="sharia"> جهات شرعية، محاكم، هيئات إفتاء</label><br>
-                <label><input type="radio" name="q3" value="humanities"> مدارس، إعلام، مراكز تدريب</label><br>
-                <label><input type="radio" name="q3" value="design"> استوديو تصميم، شركات دعاية وإعلان</label>
-            </div>
+    <div class="question">
+        <div class="question-title">3. لو خُيِّرت في بيئة عمل مستقبلية، ماذا تختار غالبًا؟</div>
+        <div class="options">
+            <label><input type="radio" name="q3" value="health"> مستشفى، مركز صحي، عيادة</label><br>
+            <label><input type="radio" name="q3" value="engineering"> شركات هندسية، مشاريع بنية تحتية</label><br>
+            <label><input type="radio" name="q3" value="computing"> شركات تقنية، مراكز بيانات، منصات رقمية</label><br>
+            <label><input type="radio" name="q3" value="business"> شركات كبرى، بنوك، مشاريع ريادية</label><br>
+            <label><input type="radio" name="q3" value="sharia"> جهات شرعية، محاكم، هيئات إفتاء</label><br>
+            <label><input type="radio" name="q3" value="humanities"> مدارس، إعلام، مراكز تدريب</label><br>
+            <label><input type="radio" name="q3" value="design"> استوديو تصميم، شركات دعاية وإعلان</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">4. كيف تصف مستوى راحتك مع الأرقام والحسابات؟</div>
-            <div class="options">
-                <label><input type="radio" name="q4" value="engineering"> أعشق الأرقام والمسائل المعقّدة</label><br>
-                <label><input type="radio" name="q4" value="computing"> أحب الأرقام حين تكون مرتبطة بالتقنية والبرمجة</label><br>
-                <label><input type="radio" name="q4" value="business"> أستخدم الأرقام في التخطيط والميزانيات</label><br>
-                <label><input type="radio" name="q4" value="health"> أحتاجها لكن ليست هدفي الأساسي</label><br>
-                <label><input type="radio" name="q4" value="design"> أفضل الإبداع البصري أكثر من الحسابات</label><br>
-                <label><input type="radio" name="q4" value="humanities"> أفضل النصوص على الأرقام غالبًا</label>
-            </div>
+    <div class="question">
+        <div class="question-title">4. كيف تصف مستوى راحتك مع الأرقام والحسابات؟</div>
+        <div class="options">
+            <label><input type="radio" name="q4" value="engineering"> أعشق الأرقام والمسائل المعقّدة</label><br>
+            <label><input type="radio" name="q4" value="computing"> أحب الأرقام حين تكون مرتبطة بالتقنية والبرمجة</label><br>
+            <label><input type="radio" name="q4" value="business"> أستخدم الأرقام في التخطيط والميزانيات</label><br>
+            <label><input type="radio" name="q4" value="health"> أحتاجها لكن ليست هدفي الأساسي</label><br>
+            <label><input type="radio" name="q4" value="design"> أفضل الإبداع البصري أكثر من الحسابات</label><br>
+            <label><input type="radio" name="q4" value="humanities"> أفضل النصوص على الأرقام غالبًا</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">5. عندما تواجه مشكلة جديدة، غالبًا ما تميل إلى:</div>
-            <div class="options">
-                <label><input type="radio" name="q5" value="computing"> البحث عن حل تقني أو رقمي لها</label><br>
-                <label><input type="radio" name="q5" value="engineering"> تقسيم المشكلة إلى أجزاء وتحليلها خطوة خطوة</label><br>
-                <label><input type="radio" name="q5" value="business"> التفكير في الأثر المالي والإداري</label><br>
-                <label><input type="radio" name="q5" value="health"> التفكير في تأثيرها على صحة الناس وجودة حياتهم</label><br>
-                <label><input type="radio" name="q5" value="humanities"> التركيز على الجانب الإنساني والتواصلي</label><br>
-                <label><input type="radio" name="q5" value="sharia"> ربطها بالقيم والمبادئ الشرعية</label><br>
-                <label><input type="radio" name="q5" value="design"> ابتكار فكرة إبداعية أو شكل بصري لحلها</label>
-            </div>
+    <div class="question">
+        <div class="question-title">5. عندما تواجه مشكلة جديدة، غالبًا ما تميل إلى:</div>
+        <div class="options">
+            <label><input type="radio" name="q5" value="computing"> البحث عن حل تقني أو رقمي لها</label><br>
+            <label><input type="radio" name="q5" value="engineering"> تقسيم المشكلة إلى أجزاء وتحليلها خطوة خطوة</label><br>
+            <label><input type="radio" name="q5" value="business"> التفكير في الأثر المالي والإداري</label><br>
+            <label><input type="radio" name="q5" value="health"> التفكير في تأثيرها على صحة الناس وجودة حياتهم</label><br>
+            <label><input type="radio" name="q5" value="humanities"> التركيز على الجانب الإنساني والتواصلي</label><br>
+            <label><input type="radio" name="q5" value="sharia"> ربطها بالقيم والمبادئ الشرعية</label><br>
+            <label><input type="radio" name="q5" value="design"> ابتكار فكرة إبداعية أو شكل بصري لحلها</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">6. أي جملة تعبّر عنك أكثر؟</div>
-            <div class="options">
-                <label><input type="radio" name="q6" value="health"> أشعر بسعادة عندما أُسهم في شفاء الناس أو دعمهم نفسيًا</label><br>
-                <label><input type="radio" name="q6" value="engineering"> أستمتع ببناء أشياء جديدة أو تطوير أنظمة عملية</label><br>
-                <label><input type="radio" name="q6" value="computing"> أحب التعمّق في عالم البرمجة والذكاء الاصطناعي</label><br>
-                <label><input type="radio" name="q6" value="business"> يجذبني عالم المال والأعمال والاستثمار</label><br>
-                <label><input type="radio" name="q6" value="sharia"> أحب تعلّم علوم الشريعة وخدمة ديني ومجتمعي</label><br>
-                <label><input type="radio" name="q6" value="humanities"> أجد نفسي في التعليم أو الإعلام أو الإرشاد</label><br>
-                <label><input type="radio" name="q6" value="design"> لدي ذائقة عالية في الألوان والتصميم</label>
-            </div>
+    <div class="question">
+        <div class="question-title">6. أي جملة تعبّر عنك أكثر؟</div>
+        <div class="options">
+            <label><input type="radio" name="q6" value="health"> أشعر بسعادة عندما أُسهم في شفاء الناس أو دعمهم نفسيًا</label><br>
+            <label><input type="radio" name="q6" value="engineering"> أستمتع ببناء أشياء جديدة أو تطوير أنظمة عملية</label><br>
+            <label><input type="radio" name="q6" value="computing"> أحب التعمّق في عالم البرمجة والذكاء الاصطناعي</label><br>
+            <label><input type="radio" name="q6" value="business"> يجذبني عالم المال والأعمال والاستثمار</label><br>
+            <label><input type="radio" name="q6" value="sharia"> أحب تعلّم علوم الشريعة وخدمة ديني ومجتمعي</label><br>
+            <label><input type="radio" name="q6" value="humanities"> أجد نفسي في التعليم أو الإعلام أو الإرشاد</label><br>
+            <label><input type="radio" name="q6" value="design"> لدي ذائقة عالية في الألوان والتصميم</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">7. كيف تفضّل طريقة تعلّمك؟</div>
-            <div class="options">
-                <label><input type="radio" name="q7" value="engineering"> تجارب عملية، مختبرات، مشاريع تطبيقية</label><br>
-                <label><input type="radio" name="q7" value="computing"> تجارب رقمية، منصات، برمجة، محاكاة</label><br>
-                <label><input type="radio" name="q7" value="health"> تدريب سريري أو ميداني مع الناس</label><br>
-                <label><input type="radio" name="q7" value="business"> دراسات حالة، مشروعات ريادية حقيقية</label><br>
-                <label><input type="radio" name="q7" value="humanities"> قراءة، مناقشة، عروض تقديمية</label><br>
-                <label><input type="radio" name="q7" value="design"> مشروعات فنية وتصميمية وأعمال إبداعية</label><br>
-                <label><input type="radio" name="q7" value="sharia"> حفظ، فهم، تطبيق عملي للقيم</label>
-            </div>
+    <div class="question">
+        <div class="question-title">7. كيف تفضّل طريقة تعلّمك؟</div>
+        <div class="options">
+            <label><input type="radio" name="q7" value="engineering"> تجارب عملية، مختبرات، مشاريع تطبيقية</label><br>
+            <label><input type="radio" name="q7" value="computing"> تجارب رقمية، منصات، برمجة، محاكاة</label><br>
+            <label><input type="radio" name="q7" value="health"> تدريب سريري أو ميداني مع الناس</label><br>
+            <label><input type="radio" name="q7" value="business"> دراسات حالة، مشروعات ريادية حقيقية</label><br>
+            <label><input type="radio" name="q7" value="humanities"> قراءة، مناقشة، عروض تقديمية</label><br>
+            <label><input type="radio" name="q7" value="design"> مشروعات فنية وتصميمية وأعمال إبداعية</label><br>
+            <label><input type="radio" name="q7" value="sharia"> حفظ، فهم، تطبيق عملي للقيم</label>
         </div>
+    </div>
 
-        <div class="question">
-            <div class="question-title">8. لو أردت أن تُسهم في رؤية السعودية 2030، فأين ترى نفسك أكثر تأثيرًا؟</div>
-            <div class="options">
-                <label><input type="radio" name="q8" value="health"> تعزيز جودة الحياة والصحة للمجتمع</label><br>
-                <label><input type="radio" name="q8" value="engineering"> تطوير البنية التحتية والمشاريع الكبرى</label><br>
-                <label><input type="radio" name="q8" value="computing"> التحول الرقمي، الذكاء الاصطناعي، الأمن السيبراني</label><br>
-                <label><input type="radio" name="q8" value="business"> تنمية الاقتصاد، ريادة الأعمال، قطاع الأعمال</label><br>
-                <label><input type="radio" name="q8" value="sharia"> تعزيز الهوية والقيم الإسلامية الوسطية</label><br>
-                <label><input type="radio" name="q8" value="humanities"> التعليم، الإرشاد، صناعة المحتوى الهادف</label><br>
-                <label><input type="radio" name="q8" value="design"> تحسين الصورة البصرية والإعلامية للمملكة</label>
-            </div>
+    <div class="question">
+        <div class="question-title">8. لو أردت أن تُسهم في رؤية السعودية 2030، فأين ترى نفسك أكثر تأثيرًا؟</div>
+        <div class="options">
+            <label><input type="radio" name="q8" value="health"> تعزيز جودة الحياة والصحة للمجتمع</label><br>
+            <label><input type="radio" name="q8" value="engineering"> تطوير البنية التحتية والمشاريع الكبرى</label><br>
+            <label><input type="radio" name="q8" value="computing"> التحول الرقمي، الذكاء الاصطناعي، الأمن السيبراني</label><br>
+            <label><input type="radio" name="q8" value="business"> تنمية الاقتصاد، ريادة الأعمال، قطاع الأعمال</label><br>
+            <label><input type="radio" name="q8" value="sharia"> تعزيز الهوية والقيم الإسلامية الوسطية</label><br>
+            <label><input type="radio" name="q8" value="humanities"> التعليم، الإرشاد، صناعة المحتوى الهادف</label><br>
+            <label><input type="radio" name="q8" value="design"> تحسين الصورة البصرية والإعلامية للمملكة</label>
         </div>
+    </div>
 
-        <div class="btn-center">
-            <button type="submit">عرض التخصصات المقترحة</button>
-        </div>
-    </form>
+    <div class="btn-center">
+        <button type="button" onclick="calculateResult()">عرض التخصصات المقترحة</button>
+    </div>
 
     <div id="resultBox">
         <h3 id="resultTitle"></h3>
@@ -326,7 +300,7 @@
 </div>
 
 <script>
-    const tracksInfo = {
+    var tracksInfo = {
         health: {
             title: "المسار الصحي",
             desc: "يبدو أن لديك ميولًا قوية نحو خدمة الإنسان صحيًا أو نفسيًا، وتميل/تميلين للتعامل مع الناس مباشرة.",
@@ -360,4 +334,60 @@
         design: {
             title: "مسار الفنون والتصميم",
             desc: "تملك/تملكين ذائقة فنية وحبًا للجمال والتصميم والإبداع البصري.",
-            majors: "من التخصصات المناسبة: التصميم الج
+            majors: "من التخصصات المناسبة: التصميم الجرافيكي، التصميم الداخلي، تصميم الأزياء، الفنون الجميلة، تصميم الوسائط الرقمية، العمارة الداخلية."
+        }
+    };
+
+    function calculateResult() {
+        var questionsCount = 8;
+        var scores = {
+            health: 0,
+            engineering: 0,
+            computing: 0,
+            business: 0,
+            sharia: 0,
+            humanities: 0,
+            design: 0
+        };
+
+        for (var i = 1; i <= questionsCount; i++) {
+            var answer = document.querySelector('input[name="q' + i + '"]:checked');
+            if (!answer) {
+                alert("يرجى الإجابة على جميع الأسئلة قبل عرض النتيجة.");
+                return;
+            }
+            var track = answer.value;
+            scores[track] = scores[track] + 1;
+        }
+
+        var bestTrack = null;
+        var bestScore = -1;
+        for (var key in scores) {
+            if (scores[key] > bestScore) {
+                bestScore = scores[key];
+                bestTrack = key;
+            }
+        }
+
+        var info = tracksInfo[bestTrack];
+        var name = document.getElementById("studentName").value.trim();
+        var titleElement = document.getElementById("resultTitle");
+
+        if (name) {
+            titleElement.textContent = "يا " + name + "، المسار الأقرب لك هو: " + info.title;
+        } else {
+            titleElement.textContent = "المسار الأقرب لك هو: " + info.title;
+        }
+
+        document.getElementById("resultDesc").textContent = info.desc;
+        document.getElementById("resultMajors").textContent = info.majors;
+        document.getElementById("resultBox").style.display = "block";
+
+        setTimeout(function () {
+            document.getElementById("resultBox").scrollIntoView({ behavior: "smooth" });
+        }, 150);
+    }
+</script>
+
+</body>
+</html>
